@@ -38,7 +38,7 @@ First the **steamcmd** image must be pulled from
 [Docker Hub](https://hub.docker.com/) using the following command:
 
 ```
-# docker pull gmazoyer/steamcmd
+# docker pull gmazoyer/docker-steamcmd
 ```
 
 After that two directories must be mounted as volumes to store the server's
@@ -54,13 +54,13 @@ docker instance. Make sure that a script called `server.sh` is in the
 
 ```
 # docker run -d --name=kf2 \
-                -v /src/docker/kf2/data:/home/steam/server_data \
-                -v /srv/docker/kf2/scripts:/home/steam/server_scripts \
-                -p 0.0.0.0:20560:20560/udp \
-                -p 0.0.0.0:27015:27015/udp \
-                -p 0.0.0.0:7777:7777/udp \
-                -p 0.0.0.0:8080:8080 \
-         gmazoyer/steamcmd:latest
+             -v /src/docker/kf2/data:/home/steam/server_data \
+             -v /srv/docker/kf2/scripts:/home/steam/server_scripts \
+             -p 0.0.0.0:20560:20560/udp \
+             -p 0.0.0.0:27015:27015/udp \
+             -p 0.0.0.0:7777:7777/udp \
+             -p 0.0.0.0:8080:8080 \
+         gmazoyer/docker-steamcmd:latest
 ```
 
 This will run a Killing Floor 2 server, using the script previously given,
