@@ -1,7 +1,7 @@
 # steamcmd Docker container
 
-This `Dockerfile` helps to start **steamcmd** related processes while
-isolating them while they run. This image is based on `debian:stretch`.
+This `Dockerfile` helps to start **steamcmd** related processes isolating them
+while they run. This image is based on `debian:stretch`.
 
 It can be used to start any game servers that can be setup using **steamcmd**.
 
@@ -16,21 +16,8 @@ perform all steps relative to the server execution (update/start/…).
 
 ## Writing a server script
 
-Here is an example of script to start a Killing Floor 2 game server.
-
-```
-#!/bin/bash
-
-/home/steam/steamcmd/steamcmd.sh \
-    +login anonymous \
-    +force_install_dir /home/steam/server_data \
-    +app_update 232130 \
-    +exit
-
-/home/steam/server_data/Binaries/Win64/KFGameSteamServer.bin.x86_64 'KF-BurningParis'
-
-exit 0
-```
+Script examples are available in the `scripts` directory. They can be used as
+they are or modified to address any specific needs.
 
 ## Running a server
 
@@ -45,7 +32,7 @@ After that two directories must be mounted as volumes to store the server's
 data and server's script.
 
 ```
-# mkdir -p /srv/docker/mygameserver/{data,scripts}
+# mkdir -p /srv/docker/kf2/{data,scripts}
 ```
 
 Once created, these directories can be used as volumes when starting the
