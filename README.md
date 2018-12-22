@@ -41,7 +41,7 @@ docker instance. Make sure that a script called `server.sh` is in the
 
 ```
 # docker run -d --name=kf2 \
-             -v /src/docker/kf2/data:/home/steam/server_data \
+             -v /srv/docker/kf2/data:/home/steam/server_data \
              -v /srv/docker/kf2/scripts:/home/steam/server_scripts \
              -p 0.0.0.0:20560:20560/udp \
              -p 0.0.0.0:27015:27015/udp \
