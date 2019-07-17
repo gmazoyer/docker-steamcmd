@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster
 
 # download requirements
 RUN apt-get -y update && \

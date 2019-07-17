@@ -1,7 +1,7 @@
 # steamcmd Docker container
 
 This `Dockerfile` helps to start **steamcmd** related processes isolating them
-while they run. This image is based on `debian:stretch`.
+while they run. This image is based on `debian:buster`.
 
 It can be used to start any game servers that can be setup using **steamcmd**.
 
