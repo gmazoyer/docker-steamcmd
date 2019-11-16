@@ -4,7 +4,7 @@
 /home/steam/steamcmd/steamcmd.sh \
     +login anonymous \
     +force_install_dir /home/steam/server_data \
-    +app_update 215360 \
+    +app_update 222860 \
     +exit
 
 # start the server
