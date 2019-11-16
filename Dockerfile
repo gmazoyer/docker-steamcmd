@@ -16,7 +16,9 @@ RUN mkdir steamcmd && cd steamcmd && \
     wget -O - "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
 
 # start steamcmd to force it to update itself
-RUN ./steamcmd/steamcmd.sh +quit
+RUN ./steamcmd/steamcmd.sh +quit && \
+    mkdir -pv /home/steam/.steam/sdk32/ && \
+    ln -s /home/steam/.steam/steamcmd/linux32/steamclient.so /home/steam/.steam/sdk32/steamclient.so
 
 # start the server main script
 ENTRYPOINT ["bash", "/home/steam/server_scripts/server.sh"]
